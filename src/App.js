@@ -74,13 +74,16 @@ function App() {
           <div className="mt-[123px] lg:mt-[203px] px-4 lg:px-0 h-[653px] lg:h-[710px] w-full flex border-t border-gray-400 flex justify-center">
             <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between w-full lg:container">
               <div className="my-[50px] lg:mt-[124px] text-left text-secondary text-[50px] lg:text-[70px]">
-                <h1 className="font-bold">Construktiv,</h1>
-                <h2>werben im jetzt</h2>
+                <h1>
+                  <strong>Construktiv, </strong>
+                  <br />
+                  werben im jetzt
+                </h1>
               </div>
 
               <img
                 src={LandingPagePicture}
-                alt="Landing Page"
+                alt="Construktiv, ein Mann arbeitet an einem Computer."
                 className="rounded-[10px] max-w-[350px] lg:h-[710px] lg:max-w-[710px]"
               />
             </div>
@@ -120,9 +123,9 @@ function App() {
               </p>
             </div>
             <div className="flex flex-col items-left bg-primary max-w-[360px] lg:h-[566px] lg:max-w-full flex-1 rounded-[10px] p-4 lg:p-10">
-              <h2 className="text-[30px] text-secondary text-left">
+              <h3 className="text-[30px] text-secondary text-left">
                 Kontaktieren Sie uns, <strong>um mehr zu erfahren.</strong>
-              </h2>
+              </h3>
 
               <form className="h-full flex flex-col gap-2 my-4">
                 <input

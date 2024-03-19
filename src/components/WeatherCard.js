@@ -47,7 +47,7 @@ export function WeatherCard({ location }) {
           <div>Loading...</div>
         ) : fakeError ? (
           <CardItem>
-            <div className="text-white">
+            <p className="text-white">
               Leider können wir derzeit keine aktuelle Wettervorhersage von
               unseren Servern abrufen.{" "}
               <strong>
@@ -60,7 +60,7 @@ export function WeatherCard({ location }) {
               >
                 Disable Fake Error (not included design)
               </button>
-            </div>
+            </p>
           </CardItem>
         ) : (
           <>
