@@ -67,8 +67,8 @@ function App() {
         </div>
 
         <div className="w-full flex justify-center items-center pt-16 lg:pt-0 pb-20">
-          <div className="container flex flex-col items-center gap-4 lg:flex-row justify-evenly lg:gap-1 px-4 lg:px-0">
-            <div className="bg-secondary max-w-[360px] lg:h-[566px] lg:max-w-[710px] rounded-[10px] p-4 lg:p-10">
+          <div className="container flex flex-col items-center gap-4 lg:flex-row justify-evenly px-4 lg:px-0">
+            <div className="bg-secondary max-w-[360px] lg:h-[566px] lg:max-w-full flex-1 rounded-[10px] p-4 lg:p-10">
               <p className="text-[24px] lg:text-[30px] text-left text-white ">
                 Wir sind ein Team von Experten, die sich auf digitales Marketing
                 spezialisiert haben. Wir bieten Ihnen die besten Lösungen für
@@ -78,7 +78,7 @@ function App() {
                 und vielem mehr.
               </p>
             </div>
-            <div className="flex flex-col items-left bg-primary max-w-[360px] lg:h-[566px] lg:max-w-[710px] rounded-[10px] p-4 lg:p-10">
+            <div className="flex flex-col items-left bg-primary max-w-[360px] lg:h-[566px] lg:max-w-full flex-1 rounded-[10px] p-4 lg:p-10">
               <h2 className="text-[30px] text-secondary text-left">
                 Kontaktieren Sie uns, <strong>um mehr zu erfahren.</strong>
               </h2>
