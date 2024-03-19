@@ -1,6 +1,6 @@
 export const navLinks = [
   {
-    title: "DIGITALES MARKETING",
+    title: "MARKETING",
     href: "/digitales-marketing",
   },
   {

@@ -12,13 +12,13 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <div className="bg-primary h-[703px] flex flex-col items-center">
-          <div className="fixed h-[123px] md:h-[203px] w-full flex justify-center bg-primary">
-            <div className="flex flex-col items-left justify-evenly container">
+        <div className="bg-primary h-[600px] lg:h-[703px] flex flex-col items-center">
+          <div className="fixed h-[123px] lg:h-[203px] w-full flex px-4 lg:px-0 lg:justify-center bg-primary">
+            <div className="flex flex-col items-left justify-evenly lg:container">
               <img
                 src={Logo}
                 alt="Construktiv Logo"
-                className="h-12 w-12 md:h-[52px] md:w-[200px]"
+                className="h-[31px] w-[130px] lg:h-[52px] lg:w-[200px]"
               />
               <nav className="flex justify-between items-center">
                 <div className="flex space-x-4">
@@ -30,25 +30,25 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-[203px] h-[710px] w-full flex border-t border-gray-400 flex justify-center">
-            <div className="flex justify-between container">
-              <div className="mt-[124px] text-left text-secondary text-[70px]">
-                <h1 className="font-bold">CONSTRUKTIV,</h1>
-                <h2>WERBEN IM JETZT</h2>
+          <div className="mt-[123px] lg:mt-[203px] px-4 lg:px-0 h-[653px] lg:h-[710px] w-full flex border-t border-gray-400 flex justify-center">
+            <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between w-full lg:container">
+              <div className="my-[50px] lg:mt-[124px] text-left text-secondary text-[50px] lg:text-[70px]">
+                <h1 className="font-bold">Construktiv,</h1>
+                <h2>werben im jetzt</h2>
               </div>
 
               <img
                 src={LandingPagePicture}
                 alt="Landing Page"
-                className="rounded-[10px] h-[710px] w-[710px]"
+                className="rounded-[10px] max-w-[350px] lg:h-[710px] lg:max-w-[710px]"
               />
             </div>
           </div>
         </div>
 
         <div className="flex flex-col mt-[140px] h-[600px] w-full items-center justify-center">
-          <div className="w-1/3">
-            <h2 className="text-[40px] text-secondary text-left leading-[50px]">
+          <div className="px-4 max-w-[360px] lg:px-0 lg:max-w-2xl">
+            <h2 className="text-[35px] lg:text-[40px] text-secondary text-left leading-[50px]">
               <strong>Wilkommen in der Welt des Digital Marketing,</strong> wo
               wir Ihnen helfen, Ihr Unternehmen zu vergrößern.
             </h2>
@@ -66,41 +66,38 @@ function App() {
           </div>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row justify-center items-center pb-40">
-          <div className="container flex justify-evenly gap-1">
-            <div className="bg-secondary h-[566px] w-[710px] rounded-[10px] p-10">
-              <p className="text-[30px] text-left text-white ">
+        <div className="w-full flex justify-center items-center pt-16 lg:pt-0 pb-20">
+          <div className="container flex flex-col items-center gap-4 lg:flex-row justify-evenly lg:gap-1 px-4 lg:px-0">
+            <div className="bg-secondary max-w-[360px] lg:h-[566px] lg:max-w-[710px] rounded-[10px] p-4 lg:p-10">
+              <p className="text-[24px] lg:text-[30px] text-left text-white ">
                 Wir sind ein Team von Experten, die sich auf digitales Marketing
                 spezialisiert haben. Wir bieten Ihnen die besten Lösungen für
                 Ihr Unternehmen und helfen Ihnen,{" "}
                 <strong>Ihre Ziele zu erreichen.</strong> Wir unterstützen Sie
                 bei der Erstellung von Inhalten, der Optimierung Ihrer Website
-                und vielem mehr. Wir sind hier, um Ihnen zu helfen, Ihre Marke
-                zu stärken und Ihr Unternehmen zu vergrößern. Wir freuen uns
-                darauf, mit Ihnen zusammenzuarbeiten.
+                und vielem mehr.
               </p>
             </div>
-            <div className="flex flex-col items-left bg-primary h-[566px] w-[710px] rounded-[10px] p-10">
+            <div className="flex flex-col items-left bg-primary max-w-[360px] lg:h-[566px] lg:max-w-[710px] rounded-[10px] p-4 lg:p-10">
               <h2 className="text-[30px] text-secondary text-left">
-                Wir freuen uns darauf,{" "}
-                <strong>mit Ihnen zusammenzuarbeiten.</strong>
+                Kontaktieren Sie uns, <strong>um mehr zu erfahren.</strong>
               </h2>
 
               <form className="h-full flex flex-col gap-2 my-4">
                 <input
                   type="text"
                   placeholder="Name"
-                  className="bg-white rounded-lg px-4 py-2 w-full rounded-lg"
+                  className="bg-white  px-4 py-2 w-full rounded-lg"
                 />
                 <input
                   type="email"
                   placeholder="E-Mail-Adresse"
-                  className="bg-white rounded-lg px-4 py-2 w-full rounded-lg"
+                  className="bg-white px-4 py-2 w-full rounded-lg"
                 />
                 <textarea
                   type="text"
                   placeholder="Nachricht"
-                  className="bg-white rounded-lg px-4 py-2 w-full h-full rounded-lg"
+                  className="bg-white px-4 py-2 w-full h-full rounded-lg"
                 />
               </form>
 
