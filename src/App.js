@@ -107,7 +107,7 @@ function App() {
           </div>
         </div>
 
-        <div className="w-full flex justify-center items-center pt-16 lg:pt-0 pb-20">
+        <div className="w-full flex justify-center items-center pt-16 lg:pt-0">
           <div className="container flex flex-col items-center gap-4 lg:flex-row justify-evenly px-4 lg:px-0">
             <div className="bg-secondary max-w-[360px] lg:h-[566px] lg:max-w-full flex-1 rounded-[10px] p-4 lg:p-10">
               <p className="text-[24px] lg:text-[30px] text-left text-white ">

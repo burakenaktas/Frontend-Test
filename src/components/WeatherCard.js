@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CardBody, CardContainer, CardItem } from "../utils/components/3DCard";
 import { useQuery } from "@tanstack/react-query";
 
@@ -5,6 +6,8 @@ const API_KEY = "d0b7abc2b79441ef8e993054241303";
 const WEATHER_LANGUAGE = "de";
 
 export function WeatherCard({ location }) {
+  const [fakeError, setFakeError] = useState(true);
+
   const fetchData = async () => {
     return fetch(
       `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&lang=${WEATHER_LANGUAGE}&q=${location}`
@@ -18,6 +21,7 @@ export function WeatherCard({ location }) {
       .then((data) => ({
         celcius: data.current.temp_c,
         condition: data.current.condition.text,
+        icon: data.current.condition.icon,
       }))
       .catch((error) =>
         console.error("There was a problem with the fetch operation:", error)
@@ -37,37 +41,43 @@ export function WeatherCard({ location }) {
   });
 
   return (
-    <CardContainer className="inter-var mx-4 lg:mx-0">
-      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border ">
+    <CardContainer className="inter-var mx-4 w-full lg:mx-0">
+      <CardBody className="bg-primary relative group/card border-black/[0.1] w-auto sm:w-full container h-auto rounded-xl p-6 border ">
         {isLoading ? (
           <div>Loading...</div>
-        ) : isError ? (
-          <div>Error: {error.message}</div>
+        ) : fakeError ? (
+          <CardItem>
+            <div className="text-white">
+              Leider können wir derzeit keine aktuelle Wettervorhersage von
+              unseren Servern abrufen.{" "}
+              <strong>
+                Glücklicherweise ist das Wetter für die Unternehmen, mit denen
+                wir zusammenarbeiten, immer schön.
+              </strong>
+              <button
+                className="text-primary bg-white px-2 py-1 rounded-lg mt-6"
+                onClick={() => setFakeError(false)}
+              >
+                Disable Fake Error (not included design)
+              </button>
+            </div>
+          </CardItem>
         ) : (
           <>
             <CardItem
-              translateZ="50"
-              className="text-xl font-bold text-neutral-600 dark:text-white"
+              translateZ="80"
+              className="text-white text-left text-sm mt-2 flex flex-col items-center md:flex-row w-full justify-between"
             >
-              {weather?.condition}
-            </CardItem>
-            <CardItem
-              as="p"
-              translateZ="60"
-              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-            >
-              Es ist {weather?.celcius}°C in{" "}
-              {localStorage.getItem("location") || "Berlin"}
-            </CardItem>
+              <div className="flex items-center text-lg">
+                <img src={weather?.icon || ""} alt="Weather API Weather Icon" />
+                Es ist {weather?.celcius}°C und {weather?.condition} in&nbsp;
+                <strong>{localStorage.getItem("location") || "Berlin"}</strong>
+              </div>
 
-            <CardItem translateZ="100" className="w-full mt-4">
-              <img
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                height="1000"
-                width="1000"
-                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt="thumbnail"
-              />
+              <strong>
+                Wie auch immer das Wetter ist, es ist nicht besser als Ihnen und
+                wärmer als Construktiv.
+              </strong>
             </CardItem>
           </>
         )}
