@@ -5,28 +5,69 @@ import Logo from "./assets/logo.svg";
 import LandingPagePicture from "./assets/landing-page-picture.png";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WeatherCard } from "./components/WeatherCard";
+import { useState } from "react";
 
 const queryClient = new QueryClient();
 
 function App() {
+  const [location, setLocation] = useState(
+    localStorage.getItem("location") || "Berlin"
+  );
+
+  const changeLocation = (e) => {
+    localStorage.setItem("location", e.target.value);
+    setLocation(e.target.value);
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
         <div className="bg-primary h-[600px] lg:h-[703px] flex flex-col items-center">
-          <div className="fixed h-[123px] lg:h-[203px] w-full flex px-4 lg:px-0 lg:justify-center bg-primary">
-            <div className="flex flex-col items-left justify-evenly lg:container">
-              <img
-                src={Logo}
-                alt="Construktiv Logo"
-                className="h-[31px] w-[130px] lg:h-[52px] lg:w-[200px]"
-              />
-              <nav className="flex justify-between items-center">
-                <div className="flex space-x-4">
-                  {navLinks.map((link, index) => (
-                    <NavLink key={index} title={link.title} href={link.href} />
-                  ))}
+          <div className="fixed h-[153px] lg:h-[203px] w-full flex px-4 lg:px-0 lg:justify-center bg-primary">
+            <div className="flex w-full flex-col sm:flex-row items-left justify-between lg:container">
+              <div className="h-full flex flex-col justify-evenly">
+                <div className="flex justify-between">
+                  <img
+                    src={Logo}
+                    alt="Construktiv Logo"
+                    className="h-[31px] w-[130px] lg:h-[52px] lg:w-[200px]"
+                  />
+                  <select
+                    value={location}
+                    onChange={(e) => changeLocation(e)}
+                    className="w-[120px] sm:hidden h-[32px] bg-white rounded-lg text-[16px] text-primary font-bold border-none lg:mt-8 px-2 py-1"
+                  >
+                    {["Bremen", "Berlin", "Hamburg"].map((location) => (
+                      <option key={location} value={location}>
+                        {location}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-              </nav>
+                <nav className="flex justify-between items-center">
+                  <div className="flex space-x-4">
+                    {navLinks.map((link, index) => (
+                      <NavLink
+                        key={index}
+                        title={link.title}
+                        href={link.href}
+                      />
+                    ))}
+                  </div>
+                </nav>
+              </div>
+
+              <select
+                value={location}
+                onChange={(e) => changeLocation(e)}
+                className="hidden sm:flex sm:w-[140px] md:mr-4 h-[40px] bg-white rounded-lg text-[16px] text-primary font-bold border-none mt-8 px-2 py-1"
+              >
+                {["Bremen", "Berlin", "Hamburg"].map((location) => (
+                  <option key={location} value={location}>
+                    {location}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
@@ -114,7 +155,7 @@ function App() {
           </div>
         </div>
 
-        <WeatherCard />
+        <WeatherCard location={location} />
       </div>
     </QueryClientProvider>
   );
