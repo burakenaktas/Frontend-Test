@@ -52,7 +52,7 @@ export function WeatherCard() {
           translateZ="60"
           className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
         >
-          Es ist {weather.celcius}°C in {location}
+          Es ist {weather?.celcius}°C in {location}
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <img

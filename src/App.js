@@ -12,10 +12,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <div
-          className="b
-        g-primary h-[703px] flex flex-col items-center"
-        >
+        <div className="bg-primary h-[703px] flex flex-col items-center">
           <div className="fixed h-[123px] md:h-[203px] w-full flex justify-center bg-primary">
             <div className="flex flex-col items-left justify-evenly container">
               <img
