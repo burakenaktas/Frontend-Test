@@ -72,7 +72,7 @@ function App() {
           </div>
 
           <div className="mt-[123px] lg:mt-[203px] px-4 lg:px-0 h-[653px] lg:h-[710px] w-full flex border-t border-gray-400 flex justify-center">
-            <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between w-full lg:container">
+            <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start justify-between w-full lg:container">
               <div className="my-[50px] lg:mt-[124px] text-left text-secondary text-[50px] lg:text-[70px]">
                 <h1>
                   <strong>Construktiv, </strong>
