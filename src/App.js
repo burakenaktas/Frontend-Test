@@ -3,8 +3,8 @@ import NavLink from "./components/NavLink";
 import { navLinks } from "./constants/navLinks";
 import Logo from "./assets/logo.svg";
 import LandingPagePicture from "./assets/landing-page-picture.png";
-import Weather from "./components/Weather";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { WeatherCard } from "./components/WeatherCard";
 
 const queryClient = new QueryClient();
 
@@ -120,7 +120,7 @@ function App() {
           </div>
         </div>
 
-        <Weather />
+        <WeatherCard />
       </div>
     </QueryClientProvider>
   );
