@@ -25,8 +25,8 @@ function App() {
         <div className="bg-primary h-[600px] lg:h-[703px] flex flex-col items-center">
           <div className="fixed h-[153px] lg:h-[203px] w-full flex px-4 lg:px-0 lg:justify-center bg-primary">
             <div className="flex w-full flex-col sm:flex-row items-left justify-between lg:container">
-              <div className="h-full flex flex-col justify-evenly">
-                <div className="flex justify-between">
+              <div className="h-full w-full flex flex-col justify-evenly">
+                <div className="flex justify-between items-center w-full">
                   <img
                     src={Logo}
                     alt="Construktiv Logo"
@@ -35,7 +35,7 @@ function App() {
                   <select
                     value={location}
                     onChange={(e) => changeLocation(e)}
-                    className="w-[120px] sm:hidden h-[32px] bg-white rounded-lg text-[16px] text-primary font-bold border-none lg:mt-8 px-2 py-1"
+                    className="w-[120px] h-[32px] bg-white rounded-lg text-[16px] text-primary font-bold border-none px-2 py-1"
                   >
                     {["Bremen", "Berlin", "Hamburg"].map((location) => (
                       <option key={location} value={location}>
@@ -56,18 +56,6 @@ function App() {
                   </div>
                 </nav>
               </div>
-
-              <select
-                value={location}
-                onChange={(e) => changeLocation(e)}
-                className="hidden sm:flex sm:w-[140px] h-[40px] bg-white rounded-lg text-[16px] text-primary font-bold border-none mt-8 px-2 py-1"
-              >
-                {["Bremen", "Berlin", "Hamburg"].map((location) => (
-                  <option key={location} value={location}>
-                    {location}
-                  </option>
-                ))}
-              </select>
             </div>
           </div>
 
