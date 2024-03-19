@@ -1,14 +1,14 @@
 export const navLinks = [
   {
-    title: "Home",
-    href: "/",
+    title: "DIGITALES MARKETING",
+    href: "/digitales-marketing",
   },
   {
-    title: "About",
-    href: "/about",
+    title: "REFERENZEN",
+    href: "/referenzen",
   },
   {
-    title: "Services",
-    href: "/services",
+    title: "AGENTUR",
+    href: "/agentur",
   },
 ];
