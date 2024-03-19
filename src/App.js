@@ -60,7 +60,7 @@ function App() {
               <select
                 value={location}
                 onChange={(e) => changeLocation(e)}
-                className="hidden sm:flex sm:w-[140px] md:mr-4 h-[40px] bg-white rounded-lg text-[16px] text-primary font-bold border-none mt-8 px-2 py-1"
+                className="hidden sm:flex sm:w-[140px] h-[40px] bg-white rounded-lg text-[16px] text-primary font-bold border-none mt-8 px-2 py-1"
               >
                 {["Bremen", "Berlin", "Hamburg"].map((location) => (
                   <option key={location} value={location}>
